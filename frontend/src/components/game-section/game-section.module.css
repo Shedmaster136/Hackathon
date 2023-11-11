@@ -1,0 +1,93 @@
+.container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  --border-rule: 2px solid rgb(162, 189, 87);
+  --border-focus: 2px solid rgb(93, 109, 50);
+  --border-scare: 2px solid rgb(82, 164, 189);
+  --border-score: 2px solid rgb(189, 121, 82);
+  --color-rule: rgb(245, 238, 230);
+  --color-scare: rgb(192, 199, 241);
+  --color-score: rgb(235, 170, 132);
+}
+
+.buttonsDescriptionContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+  gap: 20px;
+}
+
+.popoverContainer {
+  position: absolute;
+  top: 120px;
+  right: 60px;
+  bottom: 60px;
+  border-radius: 20px;
+  overflow-y: auto;
+}
+
+.popoverContainerRule {
+  left: 60px;
+  right: 80px;
+  background-color: var(--color-rule);
+}
+
+.popoverContainerScare {
+  left: 60px;
+  right: 80px;
+  background-color: var(--color-scare);
+}
+
+.popoverContainerScore {
+  left: 80px;
+  right: 60px;
+  background-color: var(--color-score);
+}
+
+.popoverButton {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 60px;
+  height: 200px;
+  border-left: none;
+  border-radius: 0 5px 5px 0;
+  writing-mode: vertical-lr;
+  text-orientation: upright;
+  text-align: center;
+  font-size: 20px;
+}
+
+.popoverButtonRule {
+  background-color: var(--color-rule);
+  border-top: var(--border-rule);
+  border-right: var(--border-rule);
+  border-bottom: var(--border-rule);
+}
+
+.popoverButtonScare {
+  background-color: var(--color-scare);
+  border-top: var(--border-scare);
+  border-right: var(--border-scare);
+  border-bottom: var(--border-scare);
+}
+
+.popoverButtonScore {
+  background-color: var(--color-score);
+  border-top: var(--border-score);
+  border-left: var(--border-score);
+  border-bottom: var(--border-score);
+  border-radius: 5px 0 0 5px;
+  border-right: none;
+}
+
+.popoverButton:focus {
+  border-left: none;
+  border-right: none;
+}
+
