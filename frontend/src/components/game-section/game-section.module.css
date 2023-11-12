@@ -29,6 +29,7 @@
   bottom: 60px;
   border-radius: 20px;
   overflow-y: auto;
+  z-index: 1;
 }
 
 .popoverContainerRule {

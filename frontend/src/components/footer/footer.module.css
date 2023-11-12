@@ -1,9 +1,13 @@
 .footer {
   background-color: rgba(68, 81, 196, 0.5);
   width: 100%;
+  max-width: 1400px;
   max-height: 200px;
   border-radius: 20px 20px 0 0;
   box-shadow: 1px 5px 12px -3px rgba(34, 60, 80, 0.2) inset;
+  position: absolute;
+  bottom: 0;
+  z-index: 0;
 }
 
 .content {
