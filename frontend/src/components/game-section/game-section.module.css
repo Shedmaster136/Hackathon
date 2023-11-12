@@ -60,14 +60,19 @@
   writing-mode: vertical-lr;
   text-orientation: upright;
   text-align: center;
+  font-family: "Teko";
   font-size: 20px;
+  font-weight: 600;
   opacity: 0.9;
-  transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+  transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out, padding 0.3s ease-in-out;
 }
+
+
 
 .popoverButton:hover {
   opacity: 1;
-  transform: scaleX(1.16) translateX(5px);
+  transform: scaleX(1.2) translateX(5px);
+  padding-right: 10px;
 }
 
 .popoverButtonRule {
@@ -75,6 +80,7 @@
   border-top: var(--border-rule);
   border-right: var(--border-rule);
   border-bottom: var(--border-rule);
+  box-shadow: 0px 5px 5px -5px rgba(34, 60, 80, 0.6);
 }
 
 .popoverButtonScare {
@@ -82,6 +88,7 @@
   border-top: var(--border-scare);
   border-right: var(--border-scare);
   border-bottom: var(--border-scare);
+  box-shadow: 0px 5px 5px -5px rgba(34, 60, 80, 0.6);
 }
 
 .popoverButtonScore {
@@ -91,6 +98,7 @@
   border-bottom: var(--border-score);
   border-radius: 5px 0 0 5px;
   border-right: none;
+  box-shadow: -5px 5px 5px -5px rgba(34, 60, 80, 0.6);
 }
 
 .popoverButton:focus {
@@ -101,4 +109,5 @@
 .popoverButtonScore:hover {
   opacity: 1;
   transform: scaleX(1.2) translateX(-5px);
+  padding-left: 10px;
 }

@@ -1,7 +1,7 @@
 import React, { FC } from "react";
 import stylesGameSection from "./game-section.module.css";
 import { GamePortal } from "../game-portal/game-portal";
-import { Popover } from "@headlessui/react";
+import { Popover, Transition } from "@headlessui/react";
 import { RuleSection } from "../rule-section/rule-section";
 import { ScareSection } from "../scare-section/scare-section";
 import { INITIAL_CARD, SAMPLE_SCORE } from "../../utils/constants";
@@ -17,11 +17,11 @@ export const GameSection: FC = (): JSX.Element => {
           >
             Правила
           </Popover.Button>
-          <Popover.Panel
-            className={`${stylesGameSection.popoverContainer} ${stylesGameSection.popoverContainerRule}`}
-          >
-            <RuleSection />
-          </Popover.Panel>
+            <Popover.Panel
+              className={`${stylesGameSection.popoverContainer} ${stylesGameSection.popoverContainerRule}`}
+            >
+              <RuleSection />
+            </Popover.Panel>
         </Popover>
         <Popover>
           <Popover.Button
@@ -42,12 +42,16 @@ export const GameSection: FC = (): JSX.Element => {
           <Popover.Button
             className={`${stylesGameSection.popoverButton} ${stylesGameSection.popoverButtonScore}`}
           >
-            Рекорды
+            {" "}
+            <span className={stylesGameSection.popoverButtonText}>
+              {" "}
+              Рекорды
+            </span>
           </Popover.Button>
           <Popover.Panel
             className={`${stylesGameSection.popoverContainer} ${stylesGameSection.popoverContainerScore}`}
           >
-            <ScoreTable scores={SAMPLE_SCORE}/>
+            <ScoreTable scores={SAMPLE_SCORE} />
           </Popover.Panel>
         </Popover>
       </div>
