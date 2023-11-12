@@ -25,12 +25,12 @@ export const Header: FC = (): JSX.Element => {
             </NavLink>
           </li>
           <li className={stylesHeader.linkContainer}>
-            <NavLink className={stylesHeader.link} to={{ pathname: "/" }}>
+            <NavLink className={stylesHeader.link} to={{ pathname: "/signup" }}>
               Регистрация
             </NavLink>
           </li>
           <li className={stylesHeader.linkContainer}>
-            <NavLink className={stylesHeader.link} to={{ pathname: "/" }}>
+            <NavLink className={stylesHeader.link} to={{ pathname: "/signin" }}>
               Вход
             </NavLink>
           </li>

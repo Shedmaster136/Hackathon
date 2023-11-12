@@ -61,6 +61,13 @@
   text-orientation: upright;
   text-align: center;
   font-size: 20px;
+  opacity: 0.9;
+  transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+.popoverButton:hover {
+  opacity: 1;
+  transform: scaleX(1.16) translateX(5px);
 }
 
 .popoverButtonRule {
@@ -91,3 +98,7 @@
   border-right: none;
 }
 
+.popoverButtonScore:hover {
+  opacity: 1;
+  transform: scaleX(1.2) translateX(-5px);
+}
