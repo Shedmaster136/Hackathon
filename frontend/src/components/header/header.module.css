@@ -3,6 +3,10 @@
   width: 100%;
   max-height: 90px;
   border-radius: 0 0 20px 20px;
+  box-shadow: 0px 5px 8px -5px rgba(34, 60, 80, 0.15);
+  --color-rule: rgb(245, 238, 230);
+  --color-scare: rgb(192, 199, 241);
+  --color-score: rgb(235, 170, 132);
 }
 
 .menuList {
@@ -21,7 +25,7 @@
   max-width: 200px;
 }
 
-.linkContainerLogo{
+.linkContainerLogo {
   width: 100%;
   max-width: 300px;
   max-height: 200px;
@@ -29,18 +33,64 @@
 }
 
 .link {
+  background-color: rgba(255, 255, 240, 0.466);
+  padding: 5px 0 5px 0;
+  border-radius: 10px;
   display: flex;
   justify-content: center;
   align-items: center;
   text-decoration: none;
   color: black;
+  font-family: "Teko";
+  font-size: 20px;
+  font-weight: 600;
+  opacity: 0.8;
+  width: 100%;
+  border: none;
+  box-shadow: 0px 5px 10px 2px rgba(34, 60, 80, 0.1);
+  transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+.link:hover {
+  opacity: 1;
+  transform: scale(1.05);
 }
 
 .logo {
-  background-image: url('../../image/logo.png');
-  width: 300px;
+  position: absolute;
+  top: 0;
+  left: calc(50% - 200px);
+  background-image: url("../../image/logo.png");
+  background-color: rgb(255, 210, 188);
+  border-radius: 0 0 30px 30px;
+  width: 400px;
   height: 150px;
   background-size: cover;
-  background-position: 50%;
+  background-position: 50% 50%;
+  background-position-x: -50%;
   background-repeat: no-repeat;
+  box-shadow: 0px -5px 5px -5px rgba(34, 60, 80, 0.4) inset;
 }
+
+.popoverContainer {
+  position: absolute;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  max-height: 661px;
+  max-width: 1260px;
+  left: calc(50% - 640px);
+  top: 210px;
+  border-radius: 20px;
+  overflow-y: auto;
+}
+
+.popoverContainerRule {
+  background-color: var(--color-rule);
+}
+
+.popoverContainerScore {
+  left: calc(50% - 620px);
+  background-color: var(--color-score);
+}
+
