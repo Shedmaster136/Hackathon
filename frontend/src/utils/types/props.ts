@@ -5,9 +5,9 @@ export interface ICard {
 }
 
 export interface IScore {
-  username: string;
+  user: string;
   score: number;
-  id: string;
+  name_level: string;
 }
 
 export interface IScores {

@@ -38,22 +38,22 @@ export const TableMUI: FC<IScores> = ({ scores }): JSX.Element => {
         <Table sx={{ minWidth: 650 }} aria-label="simple table">
           <TableHead>
             <StyledTableRow>
-              <StyledTableCell>User ID</StyledTableCell>
+              <StyledTableCell>Score</StyledTableCell>
               <StyledTableCell align="center">Username</StyledTableCell>
-              <StyledTableCell align="right">Score</StyledTableCell>
+              <StyledTableCell align="right">Level</StyledTableCell>
             </StyledTableRow>
           </TableHead>
           <TableBody>
-            {scores.map(({ username, id, score }) => (
+            {scores?.map(({ user, score, name_level }, index) => (
               <StyledTableRow
-                key={id}
+                key={index}
                 sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
               >
                 <StyledTableCell component="th" scope="row">
-                  {id}
+                  {score}
                 </StyledTableCell>
-                <StyledTableCell align="center">{username}</StyledTableCell>
-                <StyledTableCell align="right">{score}</StyledTableCell>
+                <StyledTableCell align="center">{user}</StyledTableCell>
+                <StyledTableCell align="right">{name_level}</StyledTableCell>
               </StyledTableRow>
             ))}
           </TableBody>

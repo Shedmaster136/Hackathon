@@ -51,7 +51,7 @@ export const GameSection: FC = (): JSX.Element => {
           <Popover.Panel
             className={`${stylesGameSection.popoverContainer} ${stylesGameSection.popoverContainerScore}`}
           >
-            <ScoreTable scores={SAMPLE_SCORE} />
+            <ScoreTable/>
           </Popover.Panel>
         </Popover>
       </div>

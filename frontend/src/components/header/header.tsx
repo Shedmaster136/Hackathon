@@ -35,15 +35,13 @@ export const Header: FC = (): JSX.Element => {
           </li>
           <li className={stylesHeader.linkContainer}>
             <Popover>
-              <Popover.Button
-                className={`${stylesHeader.link} `}
-              >
+              <Popover.Button className={`${stylesHeader.link} `}>
                 Таблица рекордов
               </Popover.Button>
               <Popover.Panel
                 className={`${stylesHeader.popoverContainer} ${stylesHeader.popoverContainerScore}`}
               >
-                <ScoreTable scores={SAMPLE_SCORE} />
+                <ScoreTable />
               </Popover.Panel>
             </Popover>
           </li>
