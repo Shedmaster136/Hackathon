@@ -10,7 +10,7 @@ export const INITIAL_CARD = [
     url: "https://sun9-41.userapi.com/impg/B2Eedo5RRg49M6imIsHzkHRO6ldJpWisi5O_Hg/_eWjmREhXZI.jpg?size=1200x628&quality=96&sign=7371de85de7b3efba70a9832b838f5ec&type=album",
   },
   {
-    header: "Одиночество",
+    header: "Ложь",
     text: "Стратегия выживания, использованная приемными детьми для защиты себя, которая может затруднять построение доверительных отношений и создавать коммуникативные проблемы.",
     url: "https://sun9-41.userapi.com/impg/B2Eedo5RRg49M6imIsHzkHRO6ldJpWisi5O_Hg/_eWjmREhXZI.jpg?size=1200x628&quality=96&sign=7371de85de7b3efba70a9832b838f5ec&type=album",
   },
