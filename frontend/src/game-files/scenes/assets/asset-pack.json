@@ -1,0 +1,28 @@
+{
+    "section1": {
+        "files": [
+            {
+                "url": "assets/bomb.png",
+                "type": "image",
+                "key": "bomb"
+            },
+            {
+                "url": "assets/sky.png",
+                "type": "image",
+                "key": "sky"
+            },
+            {
+                "url": "assets/star.png",
+                "type": "image",
+                "key": "star"
+            }
+        ]
+    },
+    "meta": {
+        "app": "Phaser Editor 2D - Asset Pack Editor",
+        "contentType": "phasereditor2d.pack.core.AssetContentType",
+        "url": "https://phasereditor2d.com",
+        "version": 2,
+        "showAllFilesInBlocks": false
+    }
+}

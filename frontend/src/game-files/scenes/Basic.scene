@@ -1,0 +1,78 @@
+{
+    "id": "ba071a2a-5543-405a-b947-934e6284b941",
+    "sceneType": "SCENE",
+    "settings": {
+        "preloadPackFiles": [],
+        "createMethodName": "editorCreate",
+        "sceneKey": "Basic"
+    },
+    "displayList": [
+        {
+            "type": "Layer",
+            "id": "6427d552-8e1d-4184-a93d-d3711091b604",
+            "label": "layer_1",
+            "scope": "CLASS",
+            "list": [
+                {
+                    "type": "Image",
+                    "id": "7b6dab96-4117-4555-b26e-fb4f737344b6",
+                    "label": "sky",
+                    "texture": {
+                        "key": "sky"
+                    },
+                    "x": 400,
+                    "y": 300
+                }
+            ]
+        },
+        {
+            "type": "Layer",
+            "id": "f610593b-501d-421c-991f-46b4a5974a85",
+            "label": "layer_2",
+            "scope": "CLASS",
+            "list": [
+                {
+                    "type": "Rectangle",
+                    "id": "96e92622-3f7d-4955-8a18-b41e715e4dd7",
+                    "label": "rectangle_1",
+                    "x": 152.27051443678096,
+                    "y": 338.67404138296513,
+                    "originX": 0.7989883622719164,
+                    "originY": -1.518171445335435,
+                    "isFilled": true,
+                    "width": 128,
+                    "height": 128
+                },
+                {
+                    "type": "Rectangle",
+                    "id": "fedb7afe-e494-48b3-af91-f256f5d82de9",
+                    "label": "rectangle",
+                    "x": 386.345903773524,
+                    "y": 684.2815466782927,
+                    "originX": 0.4402023275456166,
+                    "originY": 1.1428249788846196,
+                    "isFilled": true,
+                    "width": 128,
+                    "height": 128
+                },
+                {
+                    "type": "Rectangle",
+                    "id": "2c7f4dd7-d0d0-4238-8892-e81e8610f5af",
+                    "label": "rectangle_2",
+                    "x": 680,
+                    "y": 600,
+                    "isFilled": true,
+                    "width": 128,
+                    "height": 128
+                }
+            ]
+        }
+    ],
+    "plainObjects": [],
+    "meta": {
+        "app": "Phaser Editor 2D - Scene Editor",
+        "url": "https://phasereditor2d.com",
+        "contentType": "phasereditor2d.core.scene.SceneContentType",
+        "version": 5
+    }
+}
