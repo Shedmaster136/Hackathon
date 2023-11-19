@@ -1,4 +1,6 @@
-
+import star from './assets/star.png'
+import bomb from './assets/bomb.png'
+import sky from './assets/sky.png'
 // You can write more code here
 
 /* START OF COMPILED CODE */
@@ -10,7 +12,7 @@ export default class Basic extends Phaser.Scene {
 
 	constructor() {
 		super("Basic");
-		
+
 		/* START-USER-CTR-CODE */
 		// Write your code here.
 		var lonelinessFears = null;
@@ -68,42 +70,42 @@ export default class Basic extends Phaser.Scene {
 
 	preload(){
 		const assets = require('./assets/asset-pack.json');
-		this.load.image('star', 'assets/star.png');
-		this.load.image('bomb', 'assets/bomb.png');
-		this.load.image('sky', 'assets/sky.png');
+		this.load.image('star', star);
+		this.load.image('bomb', bomb);
+		this.load.image('sky', sky);
 	}
-	
+
 	//------------------------------------------------------------
 	create() {
-		
-		
+
+
 		this.editorCreate();
 		this.layer_1.depth = 1;
 		this.layer_2.depth = 100;
-		
-		
+
+
 		//variables
 		var enlargedHitArea = new Phaser.Geom.Ellipse(0,0,100,100);
-		
+
 		//Loneliness Fear code
 		this.lonelinessFears = this.physics.add.group({
 			classType: Loneliness,
 			createCallback: (child) => {this.LonelinessConstructor(child)}
 		});
 		//END Loneliness fear code
-		
+
 		//painFears code
 		this.painFears = this.physics.add.group({
 			classType: Pain,
 			createCallback: (child) => {this.PainConstructor(child)}
 		});
 		//End painFears code
-		
+
 		//lieFear code
 		this.lieFear = this.physics.add.group({
 				classType: Lie
 		});
-		
+
 		//inputs for weapons:
 		//WideAreaWeapon
 		this.input.keyboard.on('keydown-TWO', function (event){
@@ -116,7 +118,7 @@ export default class Basic extends Phaser.Scene {
 			this.painFears.children.iterate(function(child){
 				child.ChangeWeapon();
 			});
-			
+
 			this.lonelinessFears.children.iterate(function(child) {
 				child.ChangeWeapon();
 			});
@@ -160,17 +162,17 @@ export default class Basic extends Phaser.Scene {
 				child.ChangeWeapon();
 			});
 		},this);
-		
-		
+
+
 		//Spawn timer
 		this.timedEvent = this.time.addEvent({ delay: 10000, callback: this.spawnFear, callbackScope: this, loop: true });
-	
+
 		//Collisions
 		this.physics.add.collider(this.painFears, this.lieFear);
 		this.physics.add.collider(this.lonelinessFears, this.lieFear);
 	}
 	//Shoot functions
-	
+
 	//--------------------------------------------------------------------
 	//Timer callback functions
 	//Spawn function
@@ -188,7 +190,7 @@ export default class Basic extends Phaser.Scene {
 			this.spawnLie();
 		}
 	}
-	
+
 	spawnLie(){
 		this.path = new Phaser.Curves.Path(100, 0);
 		this.path.lineTo(100,50);
@@ -219,7 +221,7 @@ export default class Basic extends Phaser.Scene {
 			chainLink.setInteractive();
 			Lie.chainLinks += 1;
 			chainLink.depth = 11;
-			
+
 			chainLink.ChangeWeapon();
 			this.tweens.add({
 				targets: chainLink,
@@ -232,14 +234,14 @@ export default class Basic extends Phaser.Scene {
 			});
 		}
 		Lie.exists = true;
-		
+
 	}
-	
-	
-	
+
+
+
 	//Fear constructor functions
-	
-	
+
+
 	fearsConstructor(child){
 		child.setBounce(1, 1);
 		child.setCollideWorldBounds(true);
@@ -247,7 +249,7 @@ export default class Basic extends Phaser.Scene {
 		child.setInteractive();
 		child.depth = 10;
 	}
-	
+
 	LonelinessConstructor(child) {
 		this.fearsConstructor(child)
 		child.setVelocity(Phaser.Math.Between(-200, 200), Phaser.Math.Between(100, 200));
@@ -264,7 +266,7 @@ export default class Basic extends Phaser.Scene {
 			callbackScope: child
 		});
 	}
-	
+
 	PainConstructor(child) {
 		this.fearsConstructor(child);
 		child.setVelocity(Phaser.Math.Between(-50, 50), Phaser.Math.Between(50, 120));
@@ -298,7 +300,7 @@ export default class Basic extends Phaser.Scene {
 				}
 			}
 		});
-		
+
 		//Pain update logic
 		this.painFears.children.iterate(function(child){
 			if(child){
@@ -320,7 +322,7 @@ export default class Basic extends Phaser.Scene {
 					if (child.y < 50){
 						child.destroy();
 						console.log("pain ran away");
-					}	
+					}
 				}
 			}
 		});
@@ -360,11 +362,11 @@ class Loneliness extends Phaser.Physics.Arcade.Sprite {
 	{
 		super.destroy(fromScene);
 	}
-	
+
 	Shoot(){
 		this.destroy()
 	}
-	
+
 	ChangeWeapon(){
 		if(Loneliness.enlarged){
 			fearHitArea(Loneliness, this.input.hitArea);
@@ -372,7 +374,7 @@ class Loneliness extends Phaser.Physics.Arcade.Sprite {
 			this.on('pointerdown', this.Shoot);
 		}
 		else{
-			fearHitArea(Loneliness, this.input.hitArea); 
+			fearHitArea(Loneliness, this.input.hitArea);
 			if(Loneliness.rayWeapon){
 				this.removeListener('pointerdown');
 				this.on('pointerout', this.Shoot);
@@ -440,7 +442,7 @@ class Pain extends Phaser.Physics.Arcade.Sprite {
 				this.destroy()
 			}
 		}
-		
+
 	}
 	ChangeWeapon(){
 		if(Pain.enlarged){
@@ -449,7 +451,7 @@ class Pain extends Phaser.Physics.Arcade.Sprite {
 			this.on('pointerdown', this.Shoot);
 		}
 		else{
-			fearHitArea(Pain, this.input.hitArea); 
+			fearHitArea(Pain, this.input.hitArea);
 			if(Pain.rayWeapon){
 				this.removeListener('pointerdown');
 				this.on('pointerout', this.Shoot);
@@ -478,16 +480,16 @@ class Lie extends Phaser.Physics.Arcade.Sprite{
 	{
 		super.destroy(fromScene);
 	}
-	
+
 	Shoot(){
 		this.destroy();
 		Lie.chainLinks -= 1;
 		if(Lie.chainLinks === 0){
 			Lie.exists = false;
 		}
-		
+
 	}
-	
+
 	ChangeWeapon(){
 		if(Lie.enlarged){
 			fearHitArea(Lie, this.input.hitArea);
@@ -495,7 +497,7 @@ class Lie extends Phaser.Physics.Arcade.Sprite{
 			this.on('pointerdown', this.Shoot);
 		}
 		else{
-			fearHitArea(Lie, this.input.hitArea); 
+			fearHitArea(Lie, this.input.hitArea);
 			if(Lie.rayWeapon){
 				this.removeListener('pointerdown');
 				this.on('pointerout', this.Shoot);

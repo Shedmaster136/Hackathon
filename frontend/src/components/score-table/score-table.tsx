@@ -8,7 +8,7 @@ export const ScoreTable: FC = (): JSX.Element => {
   const [score, setScore] = useState<IScore[]>([]);
   useEffect(() => {
     getServerUsersScore()
-      .then((res: any) => {
+      .then((res: IScore[]) => {
         setScore(res)
         console.log(res);
       })

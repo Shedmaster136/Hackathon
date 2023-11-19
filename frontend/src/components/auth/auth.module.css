@@ -143,9 +143,10 @@
 .incorrect_text {
   color: #ff5555;
   position: absolute;
-  font-size: 10px;
+  font-weight: 600;
+  font-size: 15px;
   line-height: 15px;
-  letter-spacing: 0.3px;
+  letter-spacing: 0.5px;
   margin: 2px 0 0 0;
   left: 0;
   right: 0;
