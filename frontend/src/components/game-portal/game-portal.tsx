@@ -9,47 +9,55 @@ import { AppContext } from "../../utils/contexts/appContext";
 export const GamePortal: FC = (): JSX.Element => {
   const [store, setStore] = useContext(AppContext);
   useEffect(() => {
-    const config = {
-      width: 800,
-      height: 600,
-      type: Phaser.AUTO,
-      backgroundColor: "#242424",
-      scale: {
-        mode: Phaser.Scale.FIT,
-        autoCenter: Phaser.Scale.CENTER_BOTH,
-      },
-      parent: "game-container",
-      physics: {
-        default: "arcade",
-        arcade: {
-          gravity: { y: 0 },
-          debug: false,
+    let game: Phaser.Game;
+    if (store.gameLoad) {
+      console.log("im load");
+      const config = {
+        width: 800,
+        height: 600,
+        type: Phaser.AUTO,
+        backgroundColor: "#242424",
+        scale: {
+          mode: Phaser.Scale.FIT,
+          autoCenter: Phaser.Scale.CENTER_BOTH,
         },
-      },
-    };
-    const game = new Phaser.Game(config);
-    game.scene.add("Basic", Basic);
-    if (store.gameStart) {
-      game.scene.start("Basic");
-    }
-    function preload() {
-      function preload() {
-        //this.load.pack();
+        parent: "game-container",
+        physics: {
+          default: "arcade",
+          arcade: {
+            gravity: { y: 0 },
+            debug: false,
+          },
+        },
+      };
+      game = new Phaser.Game(config);
+      game.scene.add("Basic", Basic);
+
+      if (store.gameStart) {
+        game.scene.start("Basic");
       }
     }
     return () => {
-      game.destroy(true);
+      if (game) {
+        game.destroy(true);
+      }
     };
-  }, [store.gameLoad]);
+  }, [store.gameLoad, store.gameStart]);
 
-  return !store.gameLoad ? (
-    <section className={stylesGamePortal.containerStart}>
-      <div className={stylesGamePortal.containerButton}></div>
+  return (
+    <section className={stylesGamePortal.container}>
+     { !(store.gameLoad && store.gameStart) &&
+      <div className={stylesGamePortal.containerStart}>
+        <div className={stylesGamePortal.containerButton}>
+          <button
+            className={stylesGamePortal.button}
+            onClick={() => setStore({ ...store, gameStart: true })}
+          >
+            Играть!
+          </button>
+        </div>
+      </div>}
+      <div id="game-container" className={stylesGamePortal.gameContainer} />
     </section>
-  ) : (
-    <section
-      id="game-container"
-      className={stylesGamePortal.container}
-    ></section>
   );
 };
